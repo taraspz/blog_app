@@ -14,7 +14,13 @@
       <div class="container">
         <%= link_to "InstaBlog", root_path, class: 'navbar-brand' %>
 
-        
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+          <li class="nav-item">
+          <%= link_to "New Post", upload_path, class: 'btn btn-primary' %>
+          </li>
+            <% end %>
+          </ul>
 
         <ul class="navbar-nav">
           <% if user_signed_in? %>
