@@ -1,11 +1,11 @@
 {
-  "name": "gram3_app",
+  "name": "instaton",
   "private": true,
   "dependencies": {
-    "@rails/ujs": "^6.0.0",
-    "turbolinks": "^5.2.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/actioncable": "^6.0.0"
+    "@rails/webpacker": "^4.0.7",
+    "bootstrap": "^4.3.1"
   },
-  "version": "0.1.0"
+  "devDependencies": {
+    "webpack-dev-server": "^3.7.2"
+  }
 }
