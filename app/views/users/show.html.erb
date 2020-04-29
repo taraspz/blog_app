@@ -1,9 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+      <div class="col-4">
+        <%= image_tag ("inst.png"), width: "200px", class: "profile-pic"  %>
+      </div>
+      <div class="col-8">
+        <h2><%= @user.full_name %></h2>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-secondary  "%>
+        <div class="profile-stats"><%= @images.where(user_id: @user).count %> posts</div>
+        <div class="profile-stats"><%= @user.total_followers %> followers</div>
+        <div class="profile-stats"><%= @user.total_following %> following</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        <p><%= @user.full_name%></p>
+        <%= simple_format @user.description%>
+      </div>
+    </div>
+  <div class="row profile-posts">
+    <% @images.each do |image| %>
+    <div class="col-4">
+      <div class="insta-image">
+        <%= image_tag image.image, class: 'd-block w-100' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
